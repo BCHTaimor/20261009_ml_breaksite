@@ -5,6 +5,9 @@ measurements. Shared TSV datasets are built once per prediction-bin size; random
 splits store only regions and metadata. Model runs reuse the datasets without
 copying training or testing tables.
 
+For a walkthrough of the three inputs, 5- and 30-hidden-layer models, and the
+files produced by training, see [Model inputs and outputs](docs/model_inputs_and_outputs.md).
+
 ## Layout
 
 ```text
