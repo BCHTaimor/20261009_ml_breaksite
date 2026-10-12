@@ -1,0 +1,239 @@
+{
+  "config": {
+    "chrom_sizes": "u2os_at1_hg19_nuclear.chrom.sizes",
+    "genes": "u2os_rdc_genes_matched34.txt",
+    "gene_coordinates": "bed",
+    "genome_build": "hg19",
+    "output_dir": "splits/seed_20261009",
+    "block_size": 5000000,
+    "train_fraction": 0.8,
+    "min_train_rdc": 17,
+    "min_test_rdc": 1,
+    "seed": 20261009,
+    "chromosome_trials": 100,
+    "max_attempts": 1000
+  },
+  "algorithm": "randomized prefix candidates per chromosome; closest span; random ties; RDC rejection",
+  "accepted_attempt": 1,
+  "python_version": "3.9.6",
+  "command": [
+    "/Library/Developer/CommandLineTools/usr/bin/python3",
+    "scripts/generate_genomic_split.py",
+    "--chrom-sizes",
+    "u2os_at1_hg19_nuclear.chrom.sizes",
+    "--genes",
+    "u2os_rdc_genes_matched34.txt",
+    "--genome-build",
+    "hg19",
+    "--gene-coordinates",
+    "bed",
+    "--seed",
+    "20261009",
+    "--output-dir",
+    "splits/seed_20261009"
+  ],
+  "inputs": {
+    "genes": {
+      "path": "data/reference/u2os_rdc_genes_matched34.txt",
+      "sha256": "bc7f03dca30c8f8c920f3772af30a8b9a72156faa46b5cb1b22c4e2c9fc67d42",
+      "original_path": "/Volumes/taimor/Projects/Aseda/20261009_ml_breaksite/u2os_rdc_genes_matched34.txt"
+    },
+    "chrom_sizes": {
+      "path": "data/reference/u2os_at1_hg19_nuclear.chrom.sizes",
+      "sha256": "1c30d456d114736bbf2b156c069f0799b5da288e300cab4166f334f9b9b22547",
+      "original_path": "/Volumes/taimor/Projects/Aseda/20261009_ml_breaksite/u2os_at1_hg19_nuclear.chrom.sizes"
+    }
+  },
+  "script_sha256": "a23e3ac619beb00a7ebcc52a40cf7d8ad7f88151dc0e83cbaa2f53e64e7189f9",
+  "gene_counts": {
+    "total": 34,
+    "train": 28,
+    "test": 6
+  },
+  "chromosomes": {
+    "chr1": {
+      "length_bp": 249250621,
+      "train_bp": 199250621,
+      "test_bp": 50000000,
+      "train_fraction": 0.7993986943767735,
+      "independent_groups": 50
+    },
+    "chr2": {
+      "length_bp": 243199373,
+      "train_bp": 195000000,
+      "test_bp": 48199373,
+      "train_fraction": 0.8018112776960161,
+      "independent_groups": 49
+    },
+    "chr3": {
+      "length_bp": 198022430,
+      "train_bp": 158022430,
+      "test_bp": 40000000,
+      "train_fraction": 0.7980026808074216,
+      "independent_groups": 39
+    },
+    "chr4": {
+      "length_bp": 191154276,
+      "train_bp": 151154276,
+      "test_bp": 40000000,
+      "train_fraction": 0.7907449373510221,
+      "independent_groups": 39
+    },
+    "chr5": {
+      "length_bp": 180915260,
+      "train_bp": 145000000,
+      "test_bp": 35915260,
+      "train_fraction": 0.8014802068106361,
+      "independent_groups": 37
+    },
+    "chr6": {
+      "length_bp": 171115067,
+      "train_bp": 136115067,
+      "test_bp": 35000000,
+      "train_fraction": 0.7954592741970524,
+      "independent_groups": 34
+    },
+    "chr7": {
+      "length_bp": 159138663,
+      "train_bp": 129138663,
+      "test_bp": 30000000,
+      "train_fraction": 0.811485157444109,
+      "independent_groups": 30
+    },
+    "chr8": {
+      "length_bp": 146364022,
+      "train_bp": 116364022,
+      "test_bp": 30000000,
+      "train_fraction": 0.7950315959478075,
+      "independent_groups": 30
+    },
+    "chr9": {
+      "length_bp": 141213431,
+      "train_bp": 111213431,
+      "test_bp": 30000000,
+      "train_fraction": 0.7875556185586908,
+      "independent_groups": 28
+    },
+    "chr10": {
+      "length_bp": 135534747,
+      "train_bp": 110000000,
+      "test_bp": 25534747,
+      "train_fraction": 0.8115999950920335,
+      "independent_groups": 28
+    },
+    "chr11": {
+      "length_bp": 135006516,
+      "train_bp": 110000000,
+      "test_bp": 25006516,
+      "train_fraction": 0.814775488317912,
+      "independent_groups": 27
+    },
+    "chr12": {
+      "length_bp": 133851895,
+      "train_bp": 108851895,
+      "test_bp": 25000000,
+      "train_fraction": 0.8132264022111902,
+      "independent_groups": 26
+    },
+    "chr13": {
+      "length_bp": 115169878,
+      "train_bp": 90169878,
+      "test_bp": 25000000,
+      "train_fraction": 0.7829293524127897,
+      "independent_groups": 23
+    },
+    "chr14": {
+      "length_bp": 107349540,
+      "train_bp": 85000000,
+      "test_bp": 22349540,
+      "train_fraction": 0.7918059080644407,
+      "independent_groups": 22
+    },
+    "chr15": {
+      "length_bp": 102531392,
+      "train_bp": 82531392,
+      "test_bp": 20000000,
+      "train_fraction": 0.8049377891992338,
+      "independent_groups": 21
+    },
+    "chr16": {
+      "length_bp": 90354753,
+      "train_bp": 70354753,
+      "test_bp": 20000000,
+      "train_fraction": 0.7786502720006329,
+      "independent_groups": 19
+    },
+    "chr17": {
+      "length_bp": 81195210,
+      "train_bp": 65000000,
+      "test_bp": 16195210,
+      "train_fraction": 0.8005398348005996,
+      "independent_groups": 17
+    },
+    "chr18": {
+      "length_bp": 78077248,
+      "train_bp": 63077248,
+      "test_bp": 15000000,
+      "train_fraction": 0.8078825729103567,
+      "independent_groups": 15
+    },
+    "chr19": {
+      "length_bp": 59128983,
+      "train_bp": 49128983,
+      "test_bp": 10000000,
+      "train_fraction": 0.830878200627939,
+      "independent_groups": 12
+    },
+    "chr20": {
+      "length_bp": 63025520,
+      "train_bp": 50000000,
+      "test_bp": 13025520,
+      "train_fraction": 0.7933294322680717,
+      "independent_groups": 12
+    },
+    "chr21": {
+      "length_bp": 48129895,
+      "train_bp": 38129895,
+      "test_bp": 10000000,
+      "train_fraction": 0.7922289254942276,
+      "independent_groups": 10
+    },
+    "chr22": {
+      "length_bp": 51304566,
+      "train_bp": 41304566,
+      "test_bp": 10000000,
+      "train_fraction": 0.8050855746445648,
+      "independent_groups": 11
+    },
+    "chrX": {
+      "length_bp": 155270560,
+      "train_bp": 125000000,
+      "test_bp": 30270560,
+      "train_fraction": 0.8050463655183571,
+      "independent_groups": 32
+    },
+    "chrY": {
+      "length_bp": 59373566,
+      "train_bp": 49373566,
+      "test_bp": 10000000,
+      "train_fraction": 0.8315748796358299,
+      "independent_groups": 12
+    }
+  },
+  "output_coordinates": "zero-based-half-open",
+  "boundary_buffers_applied": false,
+  "mappability_masks_applied": false,
+  "coordinate_convention_status": "Assumed, not independently verified: user authorized treating gene coordinates as zero-based, start-inclusive/end-exclusive.",
+  "schema_version": 1,
+  "storage_design": "shared-tsv-region-only-splits",
+  "created_at_utc": null,
+  "created_at_note": "Exact original creation time was not recorded.",
+  "layout_migrated_at_utc": "2026-10-09T23:00:36.513240+00:00",
+  "bin_selection": {
+    "rule": "Full bin containment in the union of adjacent same-partition regions",
+    "cross_partition_bins": "exclude",
+    "boundary_buffer_bp": null,
+    "status": "Boundary buffer must be specified in model run config before fitting"
+  },
+  "historical_config_note": "config, command, and script_sha256 describe original generation before repository reorganization; inputs.path gives current project-relative locations."
+}

@@ -1,0 +1,78 @@
+{
+  "created_at_utc": "2026-10-11T18:16:27.184610+00:00",
+  "arguments": {
+    "dataset": [
+      "datasets/bins_5kb/dataset.tsv",
+      "datasets/bins_10kb/dataset.tsv"
+    ],
+    "split_dir": "splits/seed_20261009",
+    "target_kind": "raw-count",
+    "boundary_buffer_bp": 30000,
+    "output_dir": "results/run_20261011T181501181115Z_bf9308",
+    "model_seed": 42,
+    "validation_seed": 123,
+    "validation_fraction": 0.15,
+    "epochs": 100,
+    "patience": 10,
+    "batch_size": 1024,
+    "learning_rate": 0.001,
+    "save_predictions": true
+  },
+  "architecture": [
+    3,
+    64,
+    64,
+    32,
+    16,
+    8,
+    1
+  ],
+  "feature_order": [
+    "okseq",
+    "log1p_groseq",
+    "log_bin_size_bp"
+  ],
+  "target": "raw observed HTGTS break count",
+  "loss": "PoissonNLLLoss(log_input=False,full=False)",
+  "best_epoch": 4,
+  "epochs_completed": 14,
+  "preprocessor": {
+    "mean": [
+      0.0007912467443070672,
+      0.13167812099673318,
+      8.748240053217883
+    ],
+    "scale": [
+      0.22483386634397673,
+      0.2717745340008819,
+      0.326751937232638
+    ]
+  },
+  "row_counts": {
+    "train": 630594,
+    "validation": 109704,
+    "test": 183239,
+    "excluded": 5140
+  },
+  "training_count_rate_per_bp": 1.5104841874903364e-05,
+  "split_seed": 20261009,
+  "inputs": {
+    "/storage2/researchers/taimor/Projects/Aseda/20261009_ml_breaksite/datasets/bins_5kb/dataset.tsv": "3272528fa0ef106ddb7442bf7082fae847d4908f4caa7b70f5fd7c9d0c6db8f0",
+    "/storage2/researchers/taimor/Projects/Aseda/20261009_ml_breaksite/datasets/bins_10kb/dataset.tsv": "298212daf4e7fe2ee1cce2ddcd387fc87abbbc8a2a6ef3e3aa31c53d015c5503",
+    "/storage2/researchers/taimor/Projects/Aseda/20261009_ml_breaksite/splits/seed_20261009/manifest.json": "2c9b57dd1c0721f4d0e22ee5a59da5616fad522520ffcc97d94dcffcf498cf20",
+    "/storage2/researchers/taimor/Projects/Aseda/20261009_ml_breaksite/splits/seed_20261009/train_regions.bed": "8ab75afb5651afd01f6ce6320b7451faeed8185a80d151672ea358a6c3c7b933",
+    "/storage2/researchers/taimor/Projects/Aseda/20261009_ml_breaksite/splits/seed_20261009/test_regions.bed": "15d04f45fce471d9e0128523844fb5e248e090fa2919cca5d9f748a36bdf6fc9"
+  },
+  "code": {
+    "train_model.py": "7d74fd912013b3a448ae24148443ca72226e091e9e9ae2348efdb5e0907c0b32",
+    "ml_data.py": "8ac6cf2827812751f178d2016d093898e7ec7c6098ace6dc8e03a8a2f5dc636f"
+  },
+  "versions": {
+    "python": "3.11.0 | packaged by conda-forge | (main, Jan 14 2023, 12:28:47) [GCC 11.3.0]",
+    "numpy": "2.4.3",
+    "torch": "2.14.1+cu130"
+  },
+  "bin_rule": "Full fixed-size zero-anchored bins; full containment after transition buffers",
+  "validation_rule": "Whole original training region groups, selected by validation seed",
+  "row_weighting": "Equal weight per row across all supplied resolutions; overlapping resolutions are correlated"
+}

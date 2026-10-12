@@ -1,0 +1,3 @@
+# Native dataset readers; versions verified by the builder integration tests.
+pysam==0.24.1
+pyBigWig==0.3.26

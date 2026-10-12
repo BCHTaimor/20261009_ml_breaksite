@@ -1,0 +1,766 @@
+{
+  "files": [
+    {
+      "file": "data/raw/breaksites/U2OS_chr11_APH_conct.tlx",
+      "resolved_source": "/storage2/researchers/adam/work/aseda/RDC_breaks_on_transcription_direction_20260709/input/U2OS_chr11_APH_conct.tlx",
+      "rows": 13419,
+      "malformed_rows": 0,
+      "malformed_line_examples": [],
+      "valid_integer_junctions": 13419,
+      "invalid_junctions": 0,
+      "zero_junctions": 0,
+      "negative_junctions": 0,
+      "other_chromosome_rows": 0,
+      "columns": [
+        "Qname",
+        "JuncID",
+        "Rname",
+        "Junction",
+        "Strand",
+        "Rstart",
+        "Rend",
+        "B_Rname",
+        "B_Rstart",
+        "B_Rend",
+        "B_Strand",
+        "B_Qstart",
+        "B_Qend",
+        "Qstart",
+        "Qend",
+        "Qlen",
+        "B_Cigar",
+        "Cigar",
+        "Seq",
+        "J_Seq",
+        "Barcode",
+        "unaligned",
+        "baitonly",
+        "uncut",
+        "misprimed",
+        "freqcut",
+        "largegap",
+        "mapqual",
+        "breaksite",
+        "sequential",
+        "repeatseq",
+        "duplicate"
+      ],
+      "missing_flag_columns": [],
+      "chromosome_rows": {
+        "chr11": 5228,
+        "chr2": 606,
+        "chr1": 586,
+        "chr5": 570,
+        "chr15": 383,
+        "chr3": 511,
+        "chr7": 607,
+        "chr9": 386,
+        "chr16": 268,
+        "chr8": 332,
+        "chr12": 392,
+        "chr21": 79,
+        "chr10": 662,
+        "chr18": 155,
+        "chr17": 204,
+        "chr20": 180,
+        "chr19": 155,
+        "chr13": 164,
+        "chrUn_gl000220": 56,
+        "chr6": 327,
+        "chrX": 223,
+        "chr4": 517,
+        "chr14": 615,
+        "chrUn_gl000216": 32,
+        "chr22": 105,
+        "chrY": 51,
+        "chrM": 7,
+        "chr6_dbb_hap3": 1,
+        "chrUn_gl000226": 5,
+        "chrUn_gl000225": 7,
+        "chrUn_gl000237": 1,
+        "chr9_gl000199_random": 3,
+        "chrUn_gl000218": 1
+      },
+      "flags": {
+        "unaligned": {
+          "zero": 13419,
+          "nonzero": 0,
+          "empty": 0,
+          "nonnumeric": 0,
+          "literal_values": {
+            "0": 13419
+          },
+          "other_literal_rows": 0
+        },
+        "baitonly": {
+          "zero": 13419,
+          "nonzero": 0,
+          "empty": 0,
+          "nonnumeric": 0,
+          "literal_values": {
+            "0": 13419
+          },
+          "other_literal_rows": 0
+        },
+        "uncut": {
+          "zero": 11900,
+          "nonzero": 1519,
+          "empty": 0,
+          "nonnumeric": 0,
+          "literal_values": {
+            "0": 11900,
+            "1": 1066,
+            "2": 261,
+            "5": 31,
+            "3": 62,
+            "9": 14,
+            "7": 6,
+            "4": 25,
+            "6": 12,
+            "8": 28,
+            "10": 14
+          },
+          "other_literal_rows": 0
+        },
+        "misprimed": {
+          "zero": 0,
+          "nonzero": 13419,
+          "empty": 0,
+          "nonnumeric": 0,
+          "literal_values": {
+            "120": 238,
+            "118": 221,
+            "133": 1066,
+            "116": 101,
+            "132": 4551,
+            "113": 101,
+            "128": 209,
+            "93": 19,
+            "115": 97,
+            "126": 266,
+            "114": 92,
+            "131": 462,
+            "104": 67,
+            "123": 355,
+            "34": 38,
+            "109": 58,
+            "121": 266,
+            "70": 30,
+            "124": 239,
+            "41": 25
+          },
+          "other_literal_rows": 4918
+        },
+        "freqcut": {
+          "zero": 13419,
+          "nonzero": 0,
+          "empty": 0,
+          "nonnumeric": 0,
+          "literal_values": {
+            "0": 13419
+          },
+          "other_literal_rows": 0
+        },
+        "largegap": {
+          "zero": 11160,
+          "nonzero": 2259,
+          "empty": 0,
+          "nonnumeric": 0,
+          "literal_values": {
+            "0": 11160,
+            "1": 637,
+            "2": 326,
+            "13": 39,
+            "3": 213,
+            "5": 103,
+            "4": 166,
+            "9": 49,
+            "8": 58,
+            "27": 11,
+            "15": 34,
+            "24": 12,
+            "6": 92,
+            "16": 22,
+            "7": 93,
+            "10": 50,
+            "18": 26,
+            "11": 50,
+            "17": 32,
+            "25": 19
+          },
+          "other_literal_rows": 227
+        },
+        "mapqual": {
+          "zero": 13419,
+          "nonzero": 0,
+          "empty": 0,
+          "nonnumeric": 0,
+          "literal_values": {
+            "0": 13419
+          },
+          "other_literal_rows": 0
+        },
+        "breaksite": {
+          "zero": 13419,
+          "nonzero": 0,
+          "empty": 0,
+          "nonnumeric": 0,
+          "literal_values": {
+            "0": 13419
+          },
+          "other_literal_rows": 0
+        },
+        "sequential": {
+          "zero": 13419,
+          "nonzero": 0,
+          "empty": 0,
+          "nonnumeric": 0,
+          "literal_values": {
+            "0": 13419
+          },
+          "other_literal_rows": 0
+        },
+        "repeatseq": {
+          "zero": 13419,
+          "nonzero": 0,
+          "empty": 0,
+          "nonnumeric": 0,
+          "literal_values": {
+            "0": 13419
+          },
+          "other_literal_rows": 0
+        },
+        "duplicate": {
+          "zero": 13419,
+          "nonzero": 0,
+          "empty": 0,
+          "nonnumeric": 0,
+          "literal_values": {
+            "0": 13419
+          },
+          "other_literal_rows": 0
+        }
+      }
+    },
+    {
+      "file": "data/raw/breaksites/U2OS_chr2_APH_conct.tlx",
+      "resolved_source": "/storage2/researchers/adam/work/aseda/RDC_breaks_on_transcription_direction_20260709/input/U2OS_chr2_APH_conct.tlx",
+      "rows": 17120,
+      "malformed_rows": 0,
+      "malformed_line_examples": [],
+      "valid_integer_junctions": 17120,
+      "invalid_junctions": 0,
+      "zero_junctions": 0,
+      "negative_junctions": 0,
+      "other_chromosome_rows": 0,
+      "columns": [
+        "Qname",
+        "JuncID",
+        "Rname",
+        "Junction",
+        "Strand",
+        "Rstart",
+        "Rend",
+        "B_Rname",
+        "B_Rstart",
+        "B_Rend",
+        "B_Strand",
+        "B_Qstart",
+        "B_Qend",
+        "Qstart",
+        "Qend",
+        "Qlen",
+        "B_Cigar",
+        "Cigar",
+        "Seq",
+        "J_Seq",
+        "Barcode",
+        "unaligned",
+        "baitonly",
+        "uncut",
+        "misprimed",
+        "freqcut",
+        "largegap",
+        "mapqual",
+        "breaksite",
+        "sequential",
+        "repeatseq",
+        "duplicate"
+      ],
+      "missing_flag_columns": [],
+      "chromosome_rows": {
+        "chr2": 8083,
+        "chr3": 694,
+        "chr4": 601,
+        "chr6": 366,
+        "chrUn_gl000220": 58,
+        "chr13": 215,
+        "chr10": 653,
+        "chr15": 508,
+        "chr16": 307,
+        "chr1": 783,
+        "chr8": 393,
+        "chr19": 189,
+        "chr14": 529,
+        "chr9": 441,
+        "chr5": 600,
+        "chr20": 166,
+        "chrUn_gl000216": 14,
+        "chr21": 88,
+        "chr11": 404,
+        "chr7": 625,
+        "chr17": 244,
+        "chrX": 270,
+        "chr18": 234,
+        "chr22": 158,
+        "chr12": 442,
+        "chrUn_gl000225": 5,
+        "chrUn_gl000224": 2,
+        "chr17_ctg5_hap1": 1,
+        "chrY": 15,
+        "chr6_dbb_hap3": 2,
+        "chr19_gl000208_random": 2,
+        "chr9_gl000199_random": 8,
+        "chr7_gl000195_random": 1,
+        "chrM": 11,
+        "chrUn_gl000214": 1,
+        "chrUn_gl000219": 1,
+        "chr6_ssto_hap7": 1,
+        "chr6_cox_hap2": 2,
+        "chrUn_gl000226": 1,
+        "chrUn_gl000232": 1,
+        "chr17_gl000205_random": 1
+      },
+      "flags": {
+        "unaligned": {
+          "zero": 17120,
+          "nonzero": 0,
+          "empty": 0,
+          "nonnumeric": 0,
+          "literal_values": {
+            "0": 17120
+          },
+          "other_literal_rows": 0
+        },
+        "baitonly": {
+          "zero": 10665,
+          "nonzero": 6455,
+          "empty": 0,
+          "nonnumeric": 0,
+          "literal_values": {
+            "0": 10665,
+            "0.993409235": 1,
+            "0.406751122": 1,
+            "0.713075904": 1,
+            "0.970290535": 1,
+            "0.891809457": 1,
+            "0.846268842": 1,
+            "0.814632113": 1,
+            "0.002550409": 1,
+            "0.935778638": 1,
+            "0.177845924": 1,
+            "0.963611182": 1,
+            "0.275927369": 1,
+            "0.822507859": 1,
+            "0.071508793": 1,
+            "0.973377864": 1,
+            "0.177237183": 1,
+            "0.296790295": 1,
+            "0.28727905": 1,
+            "0.184943364": 1
+          },
+          "other_literal_rows": 6436
+        },
+        "uncut": {
+          "zero": 9386,
+          "nonzero": 1279,
+          "empty": 6455,
+          "nonnumeric": 0,
+          "literal_values": {
+            "0": 9386,
+            "3": 93,
+            "1": 938,
+            "2": 166,
+            "5": 30,
+            "4": 41,
+            "9": 3,
+            "10": 3,
+            "8": 4,
+            "6": 1,
+            "": 6455
+          },
+          "other_literal_rows": 0
+        },
+        "misprimed": {
+          "zero": 0,
+          "nonzero": 10665,
+          "empty": 6455,
+          "nonnumeric": 0,
+          "literal_values": {
+            "85": 147,
+            "62": 66,
+            "93": 4591,
+            "89": 221,
+            "96": 93,
+            "88": 200,
+            "84": 174,
+            "33": 11,
+            "92": 626,
+            "86": 191,
+            "72": 115,
+            "80": 77,
+            "76": 75,
+            "61": 37,
+            "77": 92,
+            "94": 938,
+            "74": 91,
+            "31": 11,
+            "83": 153,
+            "57": 37
+          },
+          "other_literal_rows": 9174
+        },
+        "freqcut": {
+          "zero": 10665,
+          "nonzero": 0,
+          "empty": 6455,
+          "nonnumeric": 0,
+          "literal_values": {
+            "0": 10665,
+            "": 6455
+          },
+          "other_literal_rows": 0
+        },
+        "largegap": {
+          "zero": 8356,
+          "nonzero": 2309,
+          "empty": 6455,
+          "nonnumeric": 0,
+          "literal_values": {
+            "0": 8356,
+            "10": 68,
+            "5": 128,
+            "2": 321,
+            "1": 590,
+            "4": 168,
+            "6": 103,
+            "24": 20,
+            "11": 48,
+            "3": 205,
+            "12": 33,
+            "17": 25,
+            "9": 56,
+            "7": 86,
+            "8": 69,
+            "16": 41,
+            "29": 10,
+            "21": 34,
+            "20": 33,
+            "13": 38
+          },
+          "other_literal_rows": 6688
+        },
+        "mapqual": {
+          "zero": 10665,
+          "nonzero": 0,
+          "empty": 6455,
+          "nonnumeric": 0,
+          "literal_values": {
+            "0": 10665,
+            "": 6455
+          },
+          "other_literal_rows": 0
+        },
+        "breaksite": {
+          "zero": 10665,
+          "nonzero": 0,
+          "empty": 6455,
+          "nonnumeric": 0,
+          "literal_values": {
+            "0": 10665,
+            "": 6455
+          },
+          "other_literal_rows": 0
+        },
+        "sequential": {
+          "zero": 10665,
+          "nonzero": 0,
+          "empty": 6455,
+          "nonnumeric": 0,
+          "literal_values": {
+            "0": 10665,
+            "": 6455
+          },
+          "other_literal_rows": 0
+        },
+        "repeatseq": {
+          "zero": 10665,
+          "nonzero": 0,
+          "empty": 6455,
+          "nonnumeric": 0,
+          "literal_values": {
+            "0": 10665,
+            "": 6455
+          },
+          "other_literal_rows": 0
+        },
+        "duplicate": {
+          "zero": 10665,
+          "nonzero": 0,
+          "empty": 6455,
+          "nonnumeric": 0,
+          "literal_values": {
+            "0": 10665,
+            "": 6455
+          },
+          "other_literal_rows": 0
+        }
+      }
+    },
+    {
+      "file": "data/raw/breaksites/U2OS_chr5_APH_conct_norm.tlx",
+      "resolved_source": "/storage2/researchers/adam/work/aseda/RDC_breaks_on_transcription_direction_20260709/input/U2OS_chr5_APH_conct_norm.tlx",
+      "rows": 17151,
+      "malformed_rows": 0,
+      "malformed_line_examples": [],
+      "valid_integer_junctions": 17151,
+      "invalid_junctions": 0,
+      "zero_junctions": 0,
+      "negative_junctions": 0,
+      "other_chromosome_rows": 0,
+      "columns": [
+        "Qname",
+        "JuncID",
+        "Rname",
+        "Junction",
+        "Strand",
+        "Rstart",
+        "Rend",
+        "B_Rname",
+        "B_Rstart",
+        "B_Rend",
+        "B_Strand",
+        "B_Qstart",
+        "B_Qend",
+        "Qstart",
+        "Qend",
+        "Qlen",
+        "B_Cigar",
+        "Cigar",
+        "Seq",
+        "J_Seq",
+        "Barcode",
+        "unaligned",
+        "baitonly",
+        "uncut",
+        "misprimed",
+        "freqcut",
+        "largegap",
+        "mapqual",
+        "breaksite",
+        "sequential",
+        "repeatseq",
+        "duplicate",
+        "Random"
+      ],
+      "missing_flag_columns": [],
+      "chromosome_rows": {
+        "chr5": 8515,
+        "chr2": 613,
+        "chr7": 590,
+        "chr14": 952,
+        "chr4": 563,
+        "chr16": 355,
+        "chr10": 736,
+        "chr1": 586,
+        "chr12": 424,
+        "chr3": 591,
+        "chr8": 291,
+        "chr11": 345,
+        "chr9": 444,
+        "chr4_gl000194_random": 1,
+        "chrX": 260,
+        "chrUn_gl000220": 56,
+        "chrY": 18,
+        "chr18": 174,
+        "chr13": 238,
+        "chr20": 197,
+        "chr6": 365,
+        "chr15": 256,
+        "chr19": 113,
+        "chr17": 198,
+        "chr22": 129,
+        "chr21": 104,
+        "chrUn_gl000216": 16,
+        "chrUn_gl000225": 4,
+        "chrM": 8,
+        "chr9_gl000199_random": 3,
+        "chrUn_gl000237": 1,
+        "chr4_gl000193_random": 2,
+        "chrUn_gl000231": 1,
+        "chr6_cox_hap2": 1,
+        "chr1_gl000192_random": 1
+      },
+      "flags": {
+        "unaligned": {
+          "zero": 17151,
+          "nonzero": 0,
+          "empty": 0,
+          "nonnumeric": 0,
+          "literal_values": {
+            "0": 17151
+          },
+          "other_literal_rows": 0
+        },
+        "baitonly": {
+          "zero": 17151,
+          "nonzero": 0,
+          "empty": 0,
+          "nonnumeric": 0,
+          "literal_values": {
+            "0": 17151
+          },
+          "other_literal_rows": 0
+        },
+        "uncut": {
+          "zero": 14040,
+          "nonzero": 3111,
+          "empty": 0,
+          "nonnumeric": 0,
+          "literal_values": {
+            "0": 14040,
+            "4": 47,
+            "1": 2506,
+            "2": 431,
+            "5": 21,
+            "3": 95,
+            "9": 3,
+            "8": 2,
+            "7": 4,
+            "6": 2
+          },
+          "other_literal_rows": 0
+        },
+        "misprimed": {
+          "zero": 0,
+          "nonzero": 17151,
+          "empty": 0,
+          "nonnumeric": 0,
+          "literal_values": {
+            "164": 434,
+            "166": 373,
+            "31": 21,
+            "140": 29,
+            "168": 5854,
+            "160": 427,
+            "172": 47,
+            "155": 182,
+            "169": 2506,
+            "165": 282,
+            "153": 217,
+            "161": 519,
+            "167": 491,
+            "170": 431,
+            "36": 21,
+            "151": 181,
+            "120": 24,
+            "80": 11,
+            "154": 236,
+            "173": 21
+          },
+          "other_literal_rows": 4844
+        },
+        "freqcut": {
+          "zero": 17151,
+          "nonzero": 0,
+          "empty": 0,
+          "nonnumeric": 0,
+          "literal_values": {
+            "0": 17151
+          },
+          "other_literal_rows": 0
+        },
+        "largegap": {
+          "zero": 14447,
+          "nonzero": 2704,
+          "empty": 0,
+          "nonnumeric": 0,
+          "literal_values": {
+            "0": 14447,
+            "3": 258,
+            "11": 51,
+            "1": 903,
+            "7": 82,
+            "2": 443,
+            "9": 47,
+            "10": 50,
+            "5": 139,
+            "4": 186,
+            "6": 109,
+            "8": 84,
+            "21": 15,
+            "13": 38,
+            "23": 15,
+            "18": 20,
+            "24": 16,
+            "17": 20,
+            "16": 23,
+            "12": 36
+          },
+          "other_literal_rows": 169
+        },
+        "mapqual": {
+          "zero": 17151,
+          "nonzero": 0,
+          "empty": 0,
+          "nonnumeric": 0,
+          "literal_values": {
+            "0": 17151
+          },
+          "other_literal_rows": 0
+        },
+        "breaksite": {
+          "zero": 17151,
+          "nonzero": 0,
+          "empty": 0,
+          "nonnumeric": 0,
+          "literal_values": {
+            "0": 17151
+          },
+          "other_literal_rows": 0
+        },
+        "sequential": {
+          "zero": 17151,
+          "nonzero": 0,
+          "empty": 0,
+          "nonnumeric": 0,
+          "literal_values": {
+            "0": 17151
+          },
+          "other_literal_rows": 0
+        },
+        "repeatseq": {
+          "zero": 17151,
+          "nonzero": 0,
+          "empty": 0,
+          "nonnumeric": 0,
+          "literal_values": {
+            "0": 17151
+          },
+          "other_literal_rows": 0
+        },
+        "duplicate": {
+          "zero": 17151,
+          "nonzero": 0,
+          "empty": 0,
+          "nonnumeric": 0,
+          "literal_values": {
+            "0": 17151
+          },
+          "other_literal_rows": 0
+        }
+      }
+    }
+  ],
+  "interpretation": "Counts describe records only. Filtering rules, coordinate convention, and normalization provenance still require the generating pipeline."
+}
