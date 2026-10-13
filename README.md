@@ -8,6 +8,10 @@ copying training or testing tables.
 For a walkthrough of the three inputs, 5- and 30-hidden-layer models, and the
 files produced by training, see [Model inputs and outputs](docs/model_inputs_and_outputs.md).
 
+For the missing-data revision and two-stage presence/count baseline, use the
+[server workflow and commands](docs/hurdle_workflow.md). This preserves original
+datasets and leaves full rebuilds and training to the researcher.
+
 ## Layout
 
 ```text
@@ -240,15 +244,61 @@ weights_only=True)`, construct `BreakCountNet`, and load its `state_dict`.
 Apply `Preprocessor.raw_transform` followed by the saved mean/scale before
 prediction. The run configuration records input/code hashes and versions.
 
+## Context transformer
+
+`scripts/train_context_transformer.py` is a separate presence-only model; it
+does not replace the pointwise hurdle or count models. For each measured center
+bin, it reads an odd window of consecutive bins and predicts whether the center
+has at least one observed HTGTS junction. Genuine zero-count centers remain
+training examples. Excluded-bin rows provide partially observed context but do
+not become labeled centers.
+
+The default 10 kb run uses 201 tokens, spanning 2.01 Mb. Each token contains
+scaled OK-seq, scaled log1p GRO-seq, separate measurement-present masks,
+relative position, and a center indicator. Six features are projected to width
+64 and passed through three transformer encoder layers with four attention
+heads and 128-unit feed-forward sublayers. The center and mean-pooled sequence
+representations feed a binary classifier. Complete windows must remain within
+one chromosome and one train/validation/test partition.
+
+Run the initial experiment on RDT01154:
+
+```bash
+python scripts/train_context_transformer.py \
+  --dataset datasets/missing_aware_v1/bins_10kb/dataset.tsv \
+  --excluded-bins datasets/missing_aware_v1/bins_10kb/excluded_bins.tsv \
+  --split-dir splits/seed_20261009 \
+  --window-bins 201 \
+  --boundary-buffer-bp 30000 \
+  --model-seed 42 --validation-seed 123
+```
+
+The completed seed-42 run had 5,466 training, 782 validation, and 1,134 test
+windows. On the 1,134-bin test subset shared with the pointwise hurdle model,
+the transformer achieved average precision 0.151 versus 0.135 for the hurdle
+model and prevalence 0.092. Its top 5% contained 13 positives among 57 bins
+(22.8% precision), compared with 9 among 57 (15.8%) for the pointwise model.
+Brier score improved from 0.0830 to 0.0827 and log loss from 0.3063 to 0.3040.
+
+This is evidence that surrounding genomic context adds modest ranking signal,
+not that the model identifies a causal break mechanism. The comparison uses one
+genomic split and one model seed. OK-seq is sparse within the windows (about 13%
+mean and 8% median observed-bin fraction), so GRO-seq context and measurement
+masks may account for some of the gain. Replicate seeds and GRO-only, OK-only,
+and mask-only ablations are required before biological interpretation. See
+`docs/context_transformer_spec.md` for the complete contract and outputs.
+
 Run contract and synthetic end-to-end tests:
 
 ```bash
 python3 -m unittest discover -s tests -v
 ```
 
-Validated with Python 3.9, NumPy 2.0.2, and PyTorch 2.8.0 on CPU. Synthetic test
-performance is not evidence of biological predictive accuracy. No model has
-been trained on the real HTGTS data yet.
+The original synthetic suite was validated with Python 3.9, NumPy 2.0.2, and
+PyTorch 2.8.0 on CPU. The contextual transformer completed on the real 10 kb
+dataset with Python 3.11.0, NumPy 2.4.3, PyTorch 2.14.1+cu130, and scikit-learn
+1.9.1 on CPU. Synthetic test performance is not evidence of biological
+predictive accuracy; real-run metrics are descriptive of the recorded split.
 
 API references: [PyTorch PoissonNLLLoss](https://docs.pytorch.org/docs/stable/generated/torch.nn.PoissonNLLLoss.html)
 and [Softplus](https://docs.pytorch.org/docs/stable/generated/torch.nn.Softplus.html).
