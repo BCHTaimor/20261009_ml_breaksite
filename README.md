@@ -261,6 +261,29 @@ heads and 128-unit feed-forward sublayers. The center and mean-pooled sequence
 representations feed a binary classifier. Complete windows must remain within
 one chromosome and one train/validation/test partition.
 
+```mermaid
+flowchart LR
+    subgraph W["2.01 Mb genomic window"]
+        U["100 upstream bins<br/>1 Mb"]
+        C["center 10 kb bin<br/>prediction target"]
+        D["100 downstream bins<br/>1 Mb"]
+        U --- C --- D
+    end
+
+    U --> S["Ordered 201-bin sequence"]
+    C --> S
+    D --> S
+    S --> F["Six features per bin<br/>OK-seq · log1p GRO-seq<br/>two presence masks<br/>relative position · center flag"]
+    F --> E["Linear embedding<br/>6 → 64"]
+    E --> T["Transformer encoder × 3<br/>4 attention heads<br/>feed-forward width 128"]
+    T --> R["Center representation<br/>+ mean of all 201 bins"]
+    R --> M["Binary classifier<br/>128 → 64 → 1"]
+    M --> P["Probability that the<br/>center bin has ≥1 break"]
+```
+
+The transformer therefore keeps 10 kb output resolution while using roughly
+one whole RDC-gene-length of context on either side of the target position.
+
 Run the initial experiment on RDT01154:
 
 ```bash
@@ -279,6 +302,12 @@ the transformer achieved average precision 0.151 versus 0.135 for the hurdle
 model and prevalence 0.092. Its top 5% contained 13 positives among 57 bins
 (22.8% precision), compared with 9 among 57 (15.8%) for the pointwise model.
 Brier score improved from 0.0830 to 0.0827 and log loss from 0.3063 to 0.3040.
+
+| Matched 10 kb test subset | Background | Pointwise hurdle | Context transformer |
+|---|---:|---:|---:|
+| Average precision | 0.092 | 0.135 | **0.151** |
+| Precision among top 5% | 9.2% expected | 15.8% | **22.8%** |
+| Positive bins among top 57 | about 5 expected | 9 | **13** |
 
 This is evidence that surrounding genomic context adds modest ranking signal,
 not that the model identifies a causal break mechanism. The comparison uses one
